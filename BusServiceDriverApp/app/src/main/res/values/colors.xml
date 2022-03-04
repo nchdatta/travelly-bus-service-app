@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F5D804</color>
+    <color name="colorPrimaryDark">#A59731</color>
+    <color name="colorAccent">#F5D804</color>
+    <color name="green">#4BC450</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#FF0202</color>
+    <color name="black">#000000</color>
+    <color name="bottomsheetcolor">#e3e3e3</color>
+    <color name="lightred">#E9A2A2</color>
+    <color name="trans">#00000000 </color>
+    <color name="border_red">#E01D0E</color>
+    <color name="border_green">#4CAF50</color>
+
+</resources>
+
+<!--<color name="colorPrimaryDark">#D3FAC200</color>-->

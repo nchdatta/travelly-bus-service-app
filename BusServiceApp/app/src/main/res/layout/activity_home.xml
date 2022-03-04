@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout_xml"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/navigation_action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></include>
+
+        <LinearLayout
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="14">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="9"
+                android:background="@drawable/white_border">
+
+                <Button
+                    android:id="@+id/toggle_drawer"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/ic_menu" />
+
+                <fragment
+                    android:id="@+id/map1"
+                    android:name="com.appolica.interactiveinfowindow.fragment.MapInfoWindowFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".map.MapsActivityHome">
+                </fragment>
+
+                <TextView
+                    android:id="@+id/adjustLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@color/white"
+                    android:text="Tab Here To Adjust Destination Location"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+                <Button
+                    android:id="@+id/btn_test"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignStart="@+id/toggle_drawer"
+                    android:layout_alignLeft="@+id/toggle_drawer"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="-9dp"
+                    android:layout_marginLeft="-8dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/ash_border"
+                    android:text=" Change Destination "
+                    android:textAllCaps="false"
+                    android:textSize="11dp" />
+
+                <ImageView
+                    android:id="@+id/move_camera"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/white_border"
+                    android:src="@drawable/my_location" />
+
+            </RelativeLayout>   <!--holds map-->
+
+            <!--<RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2">
+
+                <LinearLayout
+                    android:id="@+id/linear3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22dp"
+                        android:text="Availavle bus nearby"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 0 "
+                        android:textSize="25dp"
+                        android:gravity="center"
+                        android:id="@+id/vehicleInfo"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22dp"
+                        android:text="Reaching towards you in..."/>
+
+                    <TextView
+                        android:id="@+id/reachingTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="19dp"
+                        android:text="0 min"/>
+
+                </LinearLayout>
+
+
+            </RelativeLayout> --> <!--last portion-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5">
+
+                <LinearLayout
+                    android:id="@+id/search_portion"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_ash"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/whereto"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/ash_border"
+                        android:gravity="center_vertical"
+                        android:text=" Where to? "
+                        android:textAlignment="textStart"
+                        android:textSize="24dp"
+                        tools:ignore="RtlCompat" />
+
+                    <ListView
+                        android:id="@+id/search_history_xml"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_ash" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/availablebus_portion"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/ash"
+                        android:gravity="center"
+                        android:text="Showing available buses"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light_ash" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/reachingtime_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_ash">
+
+                    <TextView
+                        android:id="@+id/tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Reaching towards you in..."
+                        android:textSize="20dp"
+                        android:layout_above="@+id/reachingtime_xmlX"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:id="@+id/reachingtime_xmlX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="updating..."
+                        android:textAlignment="center"
+                        android:textSize="35dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"/>
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>  <!--holds bottom portion-->
+
+        </LinearLayout>
+
+        <!--<androidx.core.widget.NestedScrollView
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            app:behavior_hideable="false"
+            app:behavior_peekHeight="300dp"
+            android:background="@color/ash"
+            app:layout_behavior="@string/bottom_sheet_behavior">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/part1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Riding Information (btn_hide)"
+                    android:gravity="center"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:id="@+id/text3"/>
+
+                <RelativeLayout
+                    android:id="@+id/yoyo_xml"
+                    android:layout_width="match_parent"
+                    android:layout_height="245dp"
+                    android:background="@color/green"
+                    android:layout_below="@+id/text3">
+
+                    <LinearLayout
+                        android:id="@+id/L1"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:background="@color/light_ash"
+                        android:orientation="horizontal"
+                        android:weightSum="14">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="180dp"
+                            android:layout_weight="5">
+
+                            <ImageView
+                                android:id="@+id/driverPhoto"
+                                android:layout_width="110dp"
+                                android:layout_height="110dp"
+                                android:src="@drawable/pic"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="180dp"
+                            android:layout_weight="9">
+
+                            <TextView
+                                android:id="@+id/driverName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:text="Md Tanvir Hossain"
+                                android:gravity="center_vertical"
+                                android:textSize="23dp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:textAllCaps="false"
+                                android:layout_marginTop="40dp"/>
+
+                            <TextView
+                                android:id="@+id/text6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:text="Lic. Number: "
+                                android:layout_below="@id/driverName"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:textSize="16dp"
+                                android:layout_marginTop="10dp" />
+
+                            <TextView
+                                android:id="@+id/driverLicenseNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:text="1234567890"
+                                android:textSize="16dp"
+                                android:layout_toEndOf="@+id/text6"
+                                android:layout_below="@+id/bus_name"
+                                android:layout_marginTop="80dp"
+                                android:layout_toRightOf="@+id/text6" />
+
+                            <TextView
+                                android:id="@+id/text7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:text="Expiary Date: "
+                                android:layout_below="@id/text6"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:textSize="16dp"
+                                android:layout_marginTop="10dp" />
+
+                            <TextView
+                                android:id="@+id/driverExpiaryDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:text="12/12/1212"
+                                android:textSize="16dp"
+                                android:layout_toEndOf="@+id/text7"
+                                android:layout_below="@+id/driverLicenseNumber"
+                                android:layout_marginTop="10dp"
+                                android:layout_toRightOf="@+id/text6" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/R1"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:background="@color/light_ash"
+                        android:layout_below="@+id/L1">
+
+                        <TextView
+                            android:id="@+id/more"
+                            android:layout_width="wrap_content"
+                            android:layout_height="65dp"
+                            android:text="More..."
+                            android:textSize="23dp"
+                            android:textStyle="bold"
+                            android:gravity="center_vertical"
+                            android:layout_marginLeft="10dp"/>
+
+
+                        <LinearLayout
+                            android:id="@+id/drivermore"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:orientation="vertical"
+                            android:weightSum="2">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/t1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text=" Driver NID: "
+                                    android:gravity="bottom"
+                                    android:textSize="20dp"
+                                    android:layout_marginBottom="5dp"/>
+
+                                <TextView
+                                    android:id="@+id/driverNID"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="123456780945"
+                                    android:gravity="bottom"
+                                    android:textSize="20dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:layout_toEndOf="@+id/t1"
+                                    android:layout_toRightOf="@+id/t1" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/t2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text=" Driver Contact: "
+                                    android:gravity="bottom"
+                                    android:textSize="20dp"
+                                    android:layout_marginBottom="5dp"/>
+
+                                <TextView
+                                    android:id="@+id/driverPhone"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="+8801521314936"
+                                    android:gravity="bottom"
+                                    android:textSize="20dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:layout_toEndOf="@+id/t2"
+                                    android:layout_toRightOf="@+id/t2" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:orientation="horizontal"
+                    android:background="@color/light_ash"
+                    android:weightSum="14"
+                    android:layout_below="@+id/yoyo_xml"
+                    android:id="@+id/linear2">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="5">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:src="@drawable/bus_icon"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="9">
+
+                        <TextView
+                            android:id="@+id/busName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:text="Bikash 34"
+                            android:gravity="center_vertical"
+                            android:textSize="23dp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:textAllCaps="false"
+                            android:layout_marginTop="30dp"/>
+
+                        <TextView
+                            android:id="@+id/text4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:text="Lic. Number: "
+                            android:layout_below="@id/busName"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            android:textSize="16dp"
+                            android:layout_marginTop="10dp" />
+
+                        <TextView
+                            android:id="@+id/busLicenseNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:text="1234567890"
+                            android:textSize="16dp"
+                            android:layout_toEndOf="@+id/text4"
+                            android:layout_below="@+id/bus_name"
+                            android:layout_marginTop="70dp"
+                            android:layout_toRightOf="@+id/text4" />
+
+                        <TextView
+                            android:id="@+id/text5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:text="Expiary Date: "
+                            android:layout_below="@id/text4"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="5dp"
+                            android:textSize="16dp"
+                            android:layout_marginTop="10dp" />
+
+                        <TextView
+                            android:id="@+id/busExpiaryDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:text="12/12/1212"
+                            android:textSize="16dp"
+                            android:layout_toEndOf="@+id/text5"
+                            android:layout_below="@+id/busLicenseNumber"
+                            android:layout_marginTop="10dp"
+                            android:layout_toRightOf="@+id/text4" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/light_ash"
+                    android:layout_below="@+id/linear2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/payment_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:text=" Payment Methods : "
+                        android:textSize="20dp"
+                        android:gravity="center_vertical"/>
+                    <ImageView
+                        android:id="@+id/image1"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/bkashlogo"
+                        android:scaleType="fitCenter"
+                        android:layout_toEndOf="@+id/payment_tv"
+                        android:layout_toRightOf="@+id/payment_tv"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"/>
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/rocketlogo"
+                        android:scaleType="fitCenter"
+                        android:layout_toEndOf="@+id/image1"
+                        android:layout_toRightOf="@+id/image1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView> -->  nested part
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/navigation_header"
+            app:menu="@menu/menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

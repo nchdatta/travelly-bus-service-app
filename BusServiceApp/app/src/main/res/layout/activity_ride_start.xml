@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".map.RideStartActivity"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    android:id="@+id/drawer_layout_ridestart_activity_xml">
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/navigation_action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></include>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="14">
+
+            <fragment
+                android:id="@+id/map_ridestart_activity"
+                android:name="com.appolica.interactiveinfowindow.fragment.MapInfoWindowFragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="11"
+                tools:context=".map.RideStartActivity"/>
+
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="314dp"
+            app:behavior_hideable="false"
+            app:behavior_peekHeight="253dp"
+            android:background="@color/ash"
+            app:layout_behavior="@string/bottom_sheet_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="253dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="3">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/driver_image_bottomSheet"
+                            android:layout_width="85dp"
+                            android:layout_height="85dp"
+                            android:src="@drawable/pic"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"/>
+
+                    </RelativeLayout>  <!--holds image-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="7"
+                        android:orientation="vertical"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/driver_name_bottomSheet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:text="Driver Name"
+                            android:textSize="22dp"
+                            android:textStyle="bold"
+                            android:gravity="bottom"
+                            android:layout_marginBottom="2dp"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Bus: "
+                                android:textSize="22dp"
+                                android:gravity="top"
+                                android:layout_marginTop="2dp"/>
+
+                            <TextView
+                                android:id="@+id/bus_name_bottomSheet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Bus Name"
+                                android:textSize="22dp"
+                                android:gravity="top"
+                                android:layout_marginTop="2dp"/>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@android:color/darker_gray"/>  <!--line-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:weightSum="14">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="8"
+                        android:orientation="vertical"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Driving Lic"
+                                android:gravity="bottom"
+                                android:paddingEnd="3dp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text=": "
+                                android:gravity="bottom"/>
+                            <TextView
+                                android:id="@+id/driving_license_bottomsheet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="N/A"
+                                android:gravity="bottom"/>
+
+
+                        </LinearLayout> <!--01-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Vehicle Lic"
+                                android:gravity="bottom"
+                                android:paddingEnd="3dp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text=": "
+                                android:gravity="bottom" />
+                            <TextView
+                                android:id="@+id/vehicle_license_bottomsheet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="N/A"
+                                android:gravity="bottom" />
+
+
+                        </LinearLayout> <!--02-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Phone"
+                                android:gravity="bottom"
+                                android:paddingEnd="3dp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text=": "
+                                android:gravity="bottom" />
+                            <TextView
+                                android:id="@+id/driver_phn_bottomsheet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="N/A"
+                                android:gravity="bottom" />
+
+
+                        </LinearLayout> <!--03-->
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="5"
+                        android:orientation="vertical"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Exp: "
+                                android:gravity="bottom"
+                                android:paddingEnd="3dp" />
+
+                            <TextView
+                                android:id="@+id/driving_license_exp_bottomsheet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="N/A"
+                                android:gravity="bottom"/>
+
+                        </LinearLayout> <!--01-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Exp: "
+                                android:gravity="bottom"
+                                android:paddingEnd="3dp" />
+
+                            <TextView
+                                android:id="@+id/vehicle_license_exp_bottomsheet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="N/A"
+                                android:gravity="bottom"/>
+
+
+                        </LinearLayout> <!--02-->
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@android:color/darker_gray"/>  <!--line-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Fare : "
+                        android:textSize="20dp"/>
+                    <TextView
+                        android:id="@+id/ride_cost_bottomsheet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="50"
+                        android:textSize="20dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text=" TK"
+                        android:textSize="20dp"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@android:color/darker_gray"/>  <!--line-->
+
+                <ImageView
+                    android:id="@+id/four_dot_bottomsheet"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:src="@drawable/four_dot"
+                    android:scaleType="fitCenter"/>   <!--four dot-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/emergency_call"
+                        android:background="@drawable/text_border"
+                        android:padding="5dp"
+                        android:layout_margin="5dp"
+                        android:scaleType="fitCenter"/>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/payment"
+                        android:background="@drawable/text_border"
+                        android:padding="5dp"
+                        android:layout_margin="5dp"
+                        android:scaleType="fitCenter"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>   nested part
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view_ridestart_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/navigation_header"
+        app:menu="@menu/menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

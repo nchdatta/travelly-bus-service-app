@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_ash"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools">
+    <TextView
+        android:id="@+id/whereto"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/ash_border"
+        android:text=" Where to? "
+        android:textSize="24dp"
+        android:textAlignment="textStart"
+        android:gravity="center_vertical"
+        tools:ignore="RtlCompat" />
+
+    <ListView
+        android:id="@+id/search_history_xml"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_ash"/>
+
+</LinearLayout>

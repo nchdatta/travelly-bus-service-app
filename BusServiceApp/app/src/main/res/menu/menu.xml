@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <group android:checkableBehavior="single">
+        <item android:title="My Account"
+            android:icon="@drawable/kickout"
+            android:id="@+id/my_account_menu_xml"/>
+        <item android:title="Journey Info"
+            android:icon="@drawable/kickout"
+            android:id="@+id/journey_info_menu_xml"/>
+        <item android:title="Log Out"
+            android:icon="@drawable/logout"
+            android:id="@+id/logout_menu_xml"/>
+
+    </group>
+
+    <item android:title="Extra Options">
+        <menu>
+            <item
+                android:id="@+id/about_us_menu_xml"
+
+                android:title="About us" />
+            <item
+                android:id="@+id/share2"
+
+                android:title="share2" />
+            <item
+                android:id="@+id/share3"
+
+                android:title="share3" />
+        </menu>
+    </item>
+
+</menu>

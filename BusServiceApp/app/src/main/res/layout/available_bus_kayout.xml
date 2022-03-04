@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_margin="4dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="@dimen/cardview_default_radius"
+    app:cardMaxElevation="@dimen/cardview_default_radius"
+    app:cardPreventCornerOverlap="true"
+    android:background="@color/light_light_ash"
+    android:id="@+id/container_buslist">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="14"
+        android:background="@color/light_ash">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="4">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/bus_icon"
+                android:scaleType="centerCrop"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="vertical"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/bus_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Bikash 34"/>
+
+                <TextView
+                    android:text="MOhammadpur, Sankar, Jhigatola, City College,Bata Signal, Sahbag, Kolabagan, Dnammondi 32 bus Stop"
+                    android:id="@+id/bus_route"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:gravity="top"
+                    android:textSize="12dp"
+                    android:layout_marginLeft="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:weightSum="26">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"/>
+
+                <TextView
+                    android:id="@+id/bus_reaching_time_xml"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="9"
+                    android:background="@drawable/text_border"
+                    android:text="8 min"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="10dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="9"
+                    android:background="@drawable/text_border"
+                    android:text="Catch This Bus"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="10dp"
+                    android:id="@+id/btn_catch_bus"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>

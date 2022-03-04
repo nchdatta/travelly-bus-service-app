@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F5D804</color>
+    <color name="colorPrimaryDark">#A59731</color>
+    <color name="colorAccent">#F5D804</color>
+    <color name="green">#1FA523</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="ash">#CFCFCF</color>
+    <color name="light_ash">#E6E6E6</color>
+    <color name="red">#F81515</color>
+    <color name="light_light_ash">#F0EEEE</color>
+    <color name="transparent">#99000000 </color>
+
+</resources>

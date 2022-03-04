@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BusServiceApp</string>
+
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="sharedata">sharedata</string>
+    <string name="title_activity_maps_home">Map YoYo</string>
+
+    <string name="direction_matrix_api">AIzaSyBXzTJ4tsJOnGHcrDCR4GszzeI5spUp8mg</string>
+</resources>
